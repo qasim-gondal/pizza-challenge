@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Orders</h1>
+<hr>
+<div id="orders">
+  <% @orders.each do |order| %>
+    <%= render order %>
+   
+  <% end %>
+  <h1>Items</h1>
+   <% @items.each do |item| %>
+    <h2>Item Name:</h2>
+    <%=item.name%>
+   
+  <% end %>
+
+</div>
+  <%= button_to "Order Completed", @order, method: :delete %>
+<hr>
+
+<%= link_to "New order", new_order_path %>
+
